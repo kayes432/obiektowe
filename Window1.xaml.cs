@@ -14,35 +14,61 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
-    /// </summary>
-    /// 
-    class MyItem
-    {
-        public string Name { get; set; }
-
-        public string Sname { get; set; }
-
-        public string PESEL { get; set; }
-    }
     public partial class Window1 : Window
     {
-        public Window1()
+        public class Uczen
+        {
+            public string Pesel { get; set; }
+            public string Imie { get; set; }
+            public string DrugieImie { get; set; }
+            public string Nazwisko { get; set; }
+            public string DataUrodzenia { get; set; }
+            public string Telefon { get; set; }
+            public string Adres { get; set; }
+            public string Miejscowosc { get; set; }
+            public string KodPocztowy { get; set; }
+        }
+        public Uczen NowyUczen { get; private set; }
+
+        public Window1(Uczen uczen = null)
         {
             InitializeComponent();
+            if (uczen != null)
+            {
+                PeselBox.Text = uczen.Pesel;
+                ImieBox.Text = uczen.Imie;
+                DrugieImieBox.Text = uczen.DrugieImie;
+                NazwiskoBox.Text = uczen.Nazwisko;
+                DataUrodzeniaBox.Text = uczen.DataUrodzenia;
+                TelefonBox.Text = uczen.Telefon;
+                AdresBox.Text = uczen.Adres;
+                MiejscowoscBox.Text = uczen.Miejscowosc;
+                KodPocztowyBox.Text = uczen.KodPocztowy;
+            }
         }
-        private void button_Click(object sender, RoutedEventArgs e)
+
+        private void OK_Click(object sender, RoutedEventArgs e)
         {
+            NowyUczen = new Uczen
+            {
+                Pesel = PeselBox.Text,
+                Imie = ImieBox.Text,
+                DrugieImie = DrugieImieBox.Text,
+                Nazwisko = NazwiskoBox.Text,
+                DataUrodzenia = DataUrodzeniaBox.Text,
+                Telefon = TelefonBox.Text,
+                Adres = AdresBox.Text,
+                Miejscowosc = MiejscowoscBox.Text,
+                KodPocztowy = KodPocztowyBox.Text
+            };
+            DialogResult = true;
+            Close();
+        }
 
-
-            MyItem item = new MyItem();
-            item.Name = "Dominik";
-            item.Sname = "Bajorek";
-            item.PESEL = "12345678910";
-            
-
-
-                }
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
     }
 }

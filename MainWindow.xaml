@@ -10,13 +10,18 @@
         <ListView x:Name="listView" Margin="0,0,0,62">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding m_nID}" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding m_strName}" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding m_strSname}" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding m_strPESEL}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding Pesel}" Width="100" />
+                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding Imie}" Width="100" />
+                    <GridViewColumn Header="Drugie imię" DisplayMemberBinding="{Binding DrugieImie}" Width="100" />
+                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Nazwisko}" Width="100" />
+                    <GridViewColumn Header="Data ur." DisplayMemberBinding="{Binding DataUrodzenia}" Width="100" />
+                    <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}" Width="100" />
+                    <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding Adres}" Width="100" />
+                    <GridViewColumn Header="Miejscowość" DisplayMemberBinding="{Binding Miejscowosc}" Width="100" />
+                    <GridViewColumn Header="Kod pocztowy" DisplayMemberBinding="{Binding KodPocztowy}" Width="100" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button" Content="dodaj" HorizontalAlignment="Left" Margin="739,0,0,23" VerticalAlignment="Bottom" Click="button_Click" ></Button>
+        <Button x:Name="button" Content="dodaj" HorizontalAlignment="Left" Margin="739,0,0,23" VerticalAlignment="Bottom" Click="button_Click"></Button>
     </Grid>
 </Window>
