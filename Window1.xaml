@@ -5,42 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-
+        Title="Dodaj / Edytuj ucznia" Height="500" Width="400" WindowStartupLocation="CenterOwner">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel>
-           
-            <Label Content="PESEL *" />
-            <TextBox Name="PeselBox"/>
 
-            <Label Content="Imię *" />
-            <TextBox Name="ImieBox"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="0,0,0,10">
+                <Label Content="PESEL *"/>
+                <TextBox Name="PeselBox"/>
 
-            <Label Content="Drugie imię" />
-            <TextBox Name="DrugieImieBox"/>
+                <Label Content="Imię *"/>
+                <TextBox Name="ImieBox"/>
 
-            <Label Content="Nazwisko *" />
-            <TextBox Name="NazwiskoBox"/>
+                <Label Content="Drugie imię"/>
+                <TextBox Name="DrugieImieBox"/>
 
-            <Label Content="Data urodzenia *" />
-            <TextBox Name="DataUrodzeniaBox"/>
+                <Label Content="Nazwisko *"/>
+                <TextBox Name="NazwiskoBox"/>
 
-            <Label Content="Telefon" />
-            <TextBox Name="TelefonBox"/>
+                <Label Content="Data urodzenia * (RRRR-MM-DD)"/>
+                <TextBox Name="DataUrodzeniaBox"/>
 
-            <Label Content="Adres *" />
-            <TextBox Name="AdresBox"/>
+                <Label Content="Telefon"/>
+                <TextBox Name="TelefonBox"/>
 
-            <Label Content="Miejscowość *" />
-            <TextBox Name="MiejscowoscBox"/>
+                <Label Content="Adres *"/>
+                <TextBox Name="AdresBox"/>
 
-            <Label Content="Kod pocztowy *" />
-            <TextBox Name="KodPocztowyBox"/>
-        </StackPanel>
+                <Label Content="Miejscowość *"/>
+                <TextBox Name="MiejscowoscBox"/>
+
+                <Label Content="Kod pocztowy * (XX-XXX)"/>
+                <TextBox Name="KodPocztowyBox"/>
+            </StackPanel>
+        </ScrollViewer>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
             <Button Content="OK" Click="OK_Click" Margin="5"/>
